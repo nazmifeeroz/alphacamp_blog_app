@@ -1,10 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
-            <h1>Hello World</h1>
-
-            <%= link_to 'about page', about_path %>
-            <%= link_to 'Services page', service_path %>
+            <h1>Pages Counts</h1>
 
             <table class="table table-hover">
             	<thead>
@@ -15,20 +12,22 @@
             	</thead>
             	<tbody>
             		<tr>
-            			<td>Home</td>
-            			<td><%= Count.find(1).num %></td>
+            			<td><%= link_to 'Home', root_path %></td>
+            			<td><%= Count.find_by(page: "Home").num %></td>
             		</tr>
             		<tr>
-            			<td>About</td>
-            			<td><%= Count.find(2).num %></td>
+            			<td><%= link_to 'About', about_path %></td>
+            			<td><%= Count.find_by(page: "About").num %></td>
             		</tr>
             		<tr>
-            			<td>Service</td>
-            			<td><%= Count.find(3).num %></td>
+            			<td><%= link_to 'Services', service_path %></td>
+            			<td><%= Count.find_by(page: "service").num %></td>
             		</tr>
             	</tbody>
             	
             </table>
+            
+            <%=	link_to "Destroy", destroy_path, class: "btn btn-danger"	%>
         </div>
     </div>
 </div>
