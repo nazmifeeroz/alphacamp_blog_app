@@ -5,6 +5,30 @@
 
             <%= link_to 'about page', about_path %>
             <%= link_to 'Services page', service_path %>
+
+            <table class="table table-hover">
+            	<thead>
+            		<tr>
+            			<th>Page</th>
+            			<th>View Counts</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+            		<tr>
+            			<td>Home</td>
+            			<td><%= Count.find(1).num %></td>
+            		</tr>
+            		<tr>
+            			<td>About</td>
+            			<td><%= Count.find(2).num %></td>
+            		</tr>
+            		<tr>
+            			<td>Service</td>
+            			<td><%= Count.find(3).num %></td>
+            		</tr>
+            	</tbody>
+            	
+            </table>
         </div>
     </div>
 </div>
