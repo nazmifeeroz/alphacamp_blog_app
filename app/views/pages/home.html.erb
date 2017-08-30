@@ -27,7 +27,26 @@
             	
             </table>
             
-            <%=	link_to "Destroy", destroy_path, class: "btn btn-danger"	%>
+            <a href="/destroy" type="button" class="btn btn-danger" onclick="return confirm('Are you sure?');">Destroy</a>
         </div>
     </div>
+</div>
+
+<div id="destroyModal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Are you sure?</h4>
+			</div>
+			<!-- <div class="modal-body">
+				
+			</div> -->
+			<div class="modal-footer">
+				<a href="/destroy" type="button" class="btn btn-warning">Yes Destroy!</a>
+				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+	
 </div>
