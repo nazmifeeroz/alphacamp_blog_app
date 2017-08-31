@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
 	def index
-		
+		@posts = Post.all
 	end
 
 	def show
@@ -34,5 +34,10 @@ class PostsController < ApplicationController
 		redirect_to post_path(id: post.id)
 	end
 
+	def destroy
+		post = Post.find(params[:id])
+		post.destroy
+		redirect_to root_path
+	end
 
 end
