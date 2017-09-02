@@ -1,31 +1,81 @@
-    <div class="row">
-        <div class="col-xs-4 col-xs-offset-4">
-            <h1>Pages Counts</h1>
-
-            <table class="table table-hover">
-            	<thead>
-            		<tr>
-            			<th>Page</th>
-            			<th>View Counts</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-            		<tr>
-            			<td><%= link_to 'Home', root_path %></td>
-            			<td><%= @c.num %></td>
-            		</tr>
-            		<tr>
-            			<td><%= link_to 'About', about_path %></td>
-            			<td><%= @a.num %></td>
-            		</tr>
-            		<tr>
-            			<td><%= link_to('Services', service_path) %></td>
-            			<td><%= @s.num %></td>
-            		</tr>
-            	</tbody>
-            	
-            </table>
-            
-            <%= link_to "Destroy", destroy_path, type: "button", class: "btn btn-danger", onclick: "return confirm('Are you sure?');" %>
+<% content_for :home do %>
+<div class="cover">
+        <div class="cover-text page-scroll">
+            <h1>Hi! I'm Naz.</h1>
+            <p class="lead">I'm just a guy who tries hard to be that loving father.</p>
+            <a href="#quote" role="button" class="btn btn-danger btn-lg">Let's get started, I guess.</a>
         </div>
     </div>
+    
+    <section class="testimonial" id="quote">
+        <div class="container">
+            <blockquote>
+                &ldquo; Knowledge and skill do not make you become more successful, <br>attitude does... &rdquo;
+                <cite>&mdash; Star Wars</cite>
+            </blockquote>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>Naz who?</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Passionate</h3>
+                    <p>He loves to code. Since young, he's been trying to learn programming but never got anywhere till skillsfuture!</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Family Oriented</h3>
+                    <p>His life encompass around his wife and son. Always looking for ways provide and cherish and give happiness to them.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Always learning</h3>
+                    <p>Knowledge is vast. Technology is always changing. There is always new tech out there to learn and pick up. Learning never gets too old!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio">
+        <div class="container">
+            <h2>My Portfolio</h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <center><%= image_tag("grabtutor.jpg", width:"60%", alt:"GrabTutor.sg", class:"img-responsive") %></center>
+                    <h4>Grabtutor.sg</h4>
+                    <p>A place for tutors and students to match up to prepare them for academic excellence.</p>
+                </div>
+                <div class="col-sm-4">
+                    <%= image_tag("fgarts.png", alt: "FG Arts", class: "img-responsive") %>
+                    <h4>FG Arts</h4>
+                    <p>Wallpaper services and manufacturer of vinyl graphics for homes and offices.</p>
+                </div>
+                <div class="col-sm-4">
+                    <center><%= image_tag("ditto.png", alt: "Ditto Trading", width: "60%", class: "img-responsive") %></center>
+                    <h4>Ditto Trading</h4>
+                    <p>Supplier for toiletries products.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Let's keep in touch!</h2>
+            <p class="lead">If you like what you're seeing, send me your email and i'll contact you soon!</p>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control input-lg" placeholder="Put your email address in here...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-warning btn-lg" type="button">Submit it</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <% end %>

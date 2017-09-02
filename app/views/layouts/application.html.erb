@@ -9,8 +9,14 @@
   </head>
 
   <body>
-  <div class="container">
-    <%= yield %>
+
+  
+ 	<%= render 'layouts/nav' %>
+ 	<%= render 'layouts/messages' %>
+    <%= yield :home %>
+    <div class="container blog">
+	    <%= yield %>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

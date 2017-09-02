@@ -31,13 +31,15 @@ class PostsController < ApplicationController
 		post_params = params[:post].permit(:title, :author, :content)
 		post = Post.find(params[:id])
 		post.update(post_params)
+		flash[:success] = "Post updated"
 		redirect_to post_path(id: post.id)
 	end
 
 	def destroy
 		post = Post.find(params[:id])
 		post.destroy
-		redirect_to root_path
+		flash[:danger] = "Post deleted."
+		redirect_to posts_path
 	end
 
 end

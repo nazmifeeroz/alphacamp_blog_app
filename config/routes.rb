@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	root to: 'posts#index'
+	root to: 'pages#home'
 
 	get 'about', to: 'pages#about'
 	get 'service', to: 'pages#service'
