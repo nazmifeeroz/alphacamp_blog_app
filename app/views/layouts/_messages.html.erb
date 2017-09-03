@@ -1,7 +1,10 @@
- <% flash.each do |name, msg| %>
-	    <div class="alert alert-<%= "#{name}" %> alert-dismissable">
-	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	  <strong>Success!</strong> <%= "#{msg}" %>
-	</div>
-	
-  <% end %>
+<div class="container" >
+	 <% flash.each do |name, msg| %>
+		    <div class="alert alert-<%= "#{name}" %> alert-dismissable">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		  <strong>Success!</strong> <%= "#{msg}" %>
+		</div>
+		
+	  <% end %>
+
+  </div>

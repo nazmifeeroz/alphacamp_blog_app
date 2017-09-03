@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 	def create
 		post_params = params[:post].permit(:title, :author, :content)
 		post = Post.create(post_params)
+		flash[:success] = "New post created."
 		redirect_to post_path(id: post.id)
 	end
 
