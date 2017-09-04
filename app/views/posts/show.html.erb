@@ -6,6 +6,8 @@
 
 		<p><%= @post.author %></p>
 
+		<p>Posted on <%= @post.updated_at %></p>
+
 		<p><%= simple_format(@post.content) %></p>
 
 		<%= link_to 'Edit', edit_post_path, class:"btn btn-primary" %>

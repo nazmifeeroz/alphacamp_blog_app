@@ -17,7 +17,7 @@
 					<td><%= posts.author %></td>
 					<td><%= posts.created_at %></td>
 					<td><%= link_to 'View', post_path(id: posts.id), class:"btn btn-info btn-xs" %></td>
-					<td><%= link_to 'Delete', post_path(id:posts.id), method: :delete, onclick: "return confirm('Are you sure?');", class:"btn btn-danger btn-xs" %></td>
+					<td><%= link_to 'Delete', post_path(id:posts.id), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-danger btn-xs" %></td>
 				</tr>
 				<% end %>
 
