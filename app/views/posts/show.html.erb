@@ -13,4 +13,21 @@
 		<%= link_to 'Edit', edit_post_path, class:"btn btn-primary" %>
 		<%= link_to 'Back', posts_path, class:"btn btn-warning" %>
 	</div>
+
+	<% @post.comments.each do |comment| %>
+
+	<p><%= comment.author %></p>
+	<p><%= comment.body %></p>
+
+	<% end %>
+
+	<%= form_for @comment, url: post_comments_path(post_id: @post.id), method: :post do |f| %>
+
+		<%= f.text_field :author %>
+		<%= f.text_area :body %>
+
+		<%= f.submit 'submit' %>
+
+	<% end %>
 </div>
+
