@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
 
 	def home
-		
+		flash[:notice] = "This is a notice."
 		@c = Count.find_by(page: "Home")
+		redirect_to about_path
 		
 		if @c
 			@c.num += 1

@@ -1,7 +1,19 @@
+@font-face {
+    font-family: 'Encode';
+    src:font-url('EncodeSansCondensed-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}   
+
 html,
 body,
 .cover {
     height: 100%;
+}
+
+#abouth1 {
+    font-family: 'Encode', sans-serif;
+/*font-family: 'Raleway', sans-serif;*/
 }
 
 .cover {

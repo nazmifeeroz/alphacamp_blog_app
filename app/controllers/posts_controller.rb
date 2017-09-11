@@ -15,9 +15,14 @@ class PostsController < ApplicationController
 
 	def create
 		post_params = params[:post].permit(:title, :author, :content)
-		post = Post.create(post_params)
-		flash[:success] = "New post created."
-		redirect_to post_path(id: post.id)
+		@post = Post.create(post_params)
+		if @post.persisted?
+			flash[:success] = "New post created."
+			redirect_to post_path(id: @post.id)
+		else
+			flash[:danger] = "Fields are blank."
+			render :new
+		end
 	end
 
 	def edit
